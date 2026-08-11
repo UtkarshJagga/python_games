@@ -423,7 +423,6 @@ while running:
 
     if game_state == "PLAYING":
 
-        # Game becomes faster as score increases
         speed = min(20, 10 + score // 3)
 
         clock.tick(speed)
