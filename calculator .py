@@ -1,28 +1,55 @@
+1
+def add(a, b):
+    return a + b
 
-print("===== SIMPLE CALCULATOR =====")
 
-num1 = float(input("Enter first number: "))
-operator = input("Enter operator (+, -, *, /): ")
-num2 = float(input("Enter second number: "))
+def subtract(a, b):
+    return a - b
 
-if operator == "+":
-    result = num1 + num2
 
-elif operator == "-":
-    result = num1 - num2
+def multiply(a, b):
+    return a * b
 
-elif operator == "*":
-    result = num1 * num2
 
-elif operator == "/":
-    if num2 == 0:
-        print("Error: Cannot divide by zero.")
-        exit()
-    result = num1 / num2
+def divide(a, b):
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
 
-else:
-    print("Invalid operator.")
-    exit()
 
-print("Result:", result)
+while True:
+
+    print("\n===== CALCULATOR =====")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Exit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "5":
+        print("Calculator closed.")
+        break
+
+    if choice not in ["1", "2", "3", "4"]:
+        print("Invalid choice. Please try again.")
+        continue
+
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+
+    if choice == "1":
+        result = add(num1, num2)
+
+    elif choice == "2":
+        result = subtract(num1, num2)
+
+    elif choice == "3":
+        result = multiply(num1, num2)
+
+    elif choice == "4":
+        result = divide(num1, num2)
+
+    print("Result:", result)
 
